@@ -1,0 +1,16 @@
+Count: 400
+Mean: 242.32
+Median: 239.5
+Mode: [393.0, 170.0]
+Variance: 21099.917599999997
+Standard Deviation: 145.25810683056557
+Execution Time (s): 0.00026345252990722656
+
+--- PYLINT EVALUATION ---
+
+************* Module computeStatistics
+4.2/P1/source/computeStatistics.py:1:0: C0103: Module name "computeStatistics" doesn't conform to snake_case naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 9.88/10 (previous run: 9.88/10, +0.00)
+
