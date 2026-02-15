@@ -1,0 +1,26 @@
+Advertencia: Producto 'Tablet' no encontrado en catálogo.
+Entrada inválida de venta: {'product': 'Mouse', 'quantity': 'invalid'}
+Entrada inválida de venta: {'product': 'Laptop'}
+
+===== SALES SUMMARY =====
+Total Sales Amount: $43100.00
+Execution Time (seconds): 0.000119
+
+--- PYLINT EVALUATION ---
+
+************* Module computeSales
+5.2/P1/source/computeSales.py:1:0: C0103: Module name "computeSales" doesn't conform to snake_case naming style (invalid-name)
+5.2/P1/source/computeSales.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
+5.2/P1/source/computeSales.py:25:0: C0116: Missing function or method docstring (missing-function-docstring)
+5.2/P1/source/computeSales.py:37:0: C0116: Missing function or method docstring (missing-function-docstring)
+5.2/P1/source/computeSales.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
+5.2/P1/source/computeSales.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 9.02/10 (previous run: 9.02/10, +0.00)
+
+
+--- FLAKE8 EVALUATION ---
+
+5.2/P1/source/computeSales.py:5:80: E501 line too long (89 > 79 characters)
+5.2/P1/source/computeSales.py:44:80: E501 line too long (86 > 79 characters)

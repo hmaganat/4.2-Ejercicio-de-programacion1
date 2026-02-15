@@ -1,0 +1,7 @@
+[
+    {"product": "Laptop", "price": 15000},
+    {"product": "Mouse", "price": 500},
+    {"product": "Keyboard", "price": 1200},
+    {"product": "Monitor", "price": 4000},
+    {"product": "USB", "price": 300}
+]
