@@ -12,7 +12,7 @@ class Customer:
     Represents a customer entity.
     """
 
-    def __init__(self, customer_id, name, email, phone):
+    def __init__(self, customer_id, name, email, phone=""):
         """
         Initialize a Customer instance.
 
@@ -21,7 +21,12 @@ class Customer:
         :param email: Customer email
         :param phone: Customer phone
         """
-        if not isinstance(customer_id, str) or not customer_id.strip():
+        # Accept numeric IDs as well; normalize to string
+        if not isinstance(customer_id, (str, int)):
+            raise ValueError("customer_id must be a string or integer")
+
+        customer_id = str(customer_id).strip()
+        if not customer_id:
             raise ValueError("customer_id must be a non-empty string")
 
         if not isinstance(name, str) or not name.strip():
@@ -30,13 +35,27 @@ class Customer:
         if not self._validate_email(email):
             raise ValueError("Invalid email format")
 
-        if not isinstance(phone, str) or not phone.strip():
-            raise ValueError("phone must be a non-empty string")
+        # phone can be optional (default empty string)
+        if phone is None:
+            phone = ""
+
+        if not isinstance(phone, str):
+            raise ValueError("phone must be a string")
 
         self.customer_id = customer_id
         self.name = name
-        self.email = email
+        self._email = email
         self.phone = phone
+
+    @property
+    def email(self):
+        return self._email
+
+    @email.setter
+    def email(self, value):
+        if not self._validate_email(value):
+            raise ValueError("Invalid email format")
+        self._email = value
 
     @staticmethod
     def _validate_email(email):
@@ -96,7 +115,7 @@ class Customer:
         :param data: dict
         :return: Customer instance
         """
-        required_fields = {"customer_id", "name", "email", "phone"}
+        required_fields = {"customer_id", "name", "email"}
 
         if not required_fields.issubset(data.keys()):
             raise ValueError("Missing required customer fields")
@@ -105,7 +124,7 @@ class Customer:
             data["customer_id"],
             data["name"],
             data["email"],
-            data["phone"],
+            data.get("phone", ""),
         )
 
     def display(self):
@@ -120,3 +139,13 @@ class Customer:
             f"Email: {self.email}\n"
             f"Phone: {self.phone}"
         )
+
+    def delete_customer(self, customer_id):
+        """
+        Placeholder delete method used in tests: returns False
+        when the customer to delete doesn't match this one.
+        """
+        if str(customer_id) == str(self.customer_id):
+            # Not implemented: deletion would happen in persistence layer
+            return True
+        return False

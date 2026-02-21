@@ -19,7 +19,12 @@ class Hotel:
         :param location: Location of the hotel
         :param total_rooms: Total number of rooms
         """
-        if not isinstance(hotel_id, str) or not hotel_id.strip():
+        # Accept numeric IDs as well; normalize to string
+        if not isinstance(hotel_id, (str, int)):
+            raise ValueError("hotel_id must be a string or integer")
+
+        hotel_id = str(hotel_id).strip()
+        if not hotel_id:
             raise ValueError("hotel_id must be a non-empty string")
 
         if not isinstance(name, str) or not name.strip():
