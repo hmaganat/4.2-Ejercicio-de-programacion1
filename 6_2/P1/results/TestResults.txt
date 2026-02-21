@@ -1,5 +1,15 @@
-...........
-----------------------------------------------------------------------
-Ran 11 tests in 0.003s
-
-OK
+Name                              Stmts   Miss  Cover   Missing
+---------------------------------------------------------------
+source/__init__.py                    0      0   100%
+source/customer.py                   61     16    74%   26, 30, 33, 36, 40, 43, 69, 84, 88-90, 93-95, 121, 150
+source/hotel.py                      57     28    51%   24, 28, 31, 34, 37, 75-99, 107, 123-142
+source/reservation.py                70     15    79%   39-42, 72-73, 78, 81, 84, 93, 104, 122, 148, 184, 191
+tests/__init__.py                     0      0   100%
+tests/test_customer.py               17      1    94%   34
+tests/test_customer_extra.py         21      1    95%   30
+tests/test_hotel.py                  20      1    95%   33
+tests/test_hotel_extra.py            31      1    97%   42
+tests/test_reservation.py            21      1    95%   35
+tests/test_reservation_extra.py      21      1    95%   28
+---------------------------------------------------------------
+TOTAL                               319     65    80%
