@@ -149,4 +149,4 @@ class Hotel:
             f"Total Rooms: {self.total_rooms}\n"
             f"Available Rooms: {self.available_rooms}"
         )
-        
+      
